@@ -26,10 +26,27 @@ document.addEventListener('DOMContentLoaded', function () {
             openNewTabFromCardNumber();
         }
     });
-
+    // quando eu colar um número de cartão e ele começar com GATEWAY, SMTP OU POROTAJE ele deve selecionar o prefixo automaticamente
+    document.querySelector('#card-number').addEventListener('paste', function (e) {
+        var clipboardData = e.clipboardData || window.clipboardData;
+        var pastedData = clipboardData.getData('Text');
+        var prefix = document.querySelector('#prefix');
+        if (pastedData.startsWith('GATEWAY')) {
+            prefix.value = 'GATEWAY';
+        } else if (pastedData.startsWith('SMPR')) {
+            prefix.value = 'SMPR';
+        } else if (pastedData.startsWith('POROTAJE')) {
+            prefix.value = 'POROTAJE';
+        }
+    });
     //Quando digirar o número do cartão, ele habilite os botões
     document.querySelector('#card-number').addEventListener('input', function () {
         var cardNumber = document.querySelector('#card-number').value;
+        if (cardNumber.startsWith('-')) {
+            cardNumber = cardNumber.substring(1);
+            document.querySelector('#card-number').value = cardNumber;
+        }
+
         if (cardNumber.length > 0) {
             document.querySelector('#btn').removeAttribute('disabled');
             document.querySelector('#btn-copy').removeAttribute('disabled');
@@ -45,6 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return undefined;
         }
         var prefix = document.querySelector('#prefix').value;
+        // se cardNumber começar com - remove
+        if (cardNumber.startsWith('-')) {
+            cardNumber = cardNumber.substring(1);
+        }
         return 'https://mercadolibre.atlassian.net/browse/' + prefix + '-' + cardNumber;
     }
 
