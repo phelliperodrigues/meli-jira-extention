@@ -1,0 +1,15 @@
+{
+    "name": "MELI - Gateway Card Jira",
+    "manifest_version": 3,
+    "version": "0.0.1",
+    "description": "Open Jira Card",
+    "action": {
+        "default_title": "Open Jira Card:",
+        "default_popup": "index.html"
+    },
+    "icons": {
+      "16": "board16.png",
+      "32": "board32.png",
+      "128": "board128.png"
+    }
+}

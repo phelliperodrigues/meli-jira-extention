@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+	width: 580px;
+	background-image: linear-gradient(45deg, #ffffff, #a3a3a3);
+	background-color:rgba(0, 0, 0, 0.5);
+	font-family: 'Muli', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 40vh;
+	margin: 0;
+}
+
+.main {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
+	display: flex;
+	max-width: 100%;
+	margin: 15px;
+	overflow: hidden;
+	width: 550px;
+}
+
+.main h4 {
+	opacity: 0.7;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.main small {
+	opacity: 0.2;
+}
+
+
+
+.main input {
+	letter-spacing: 1px;
+	margin: 10px 0;
+	font-size: large;
+	width: 200px;
+}
+
+.main select {
+	letter-spacing: 1px;
+	margin: 10px 0;
+	width: 200px;
+	font-size: large;
+}
+
+.main-preview {
+	background-color: #002B74;
+	color: #fff;
+	padding: 10px;
+	max-width: 250px;
+}
+
+.main-preview h4, img, h2 {
+	margin: 15px 30px;
+}
+
+.main-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	opacity: 0.6;
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.main-info {
+	padding: 30px;
+	position: relative;
+	width: 60%;
+}
+
+.button-container{
+	margin-top: 3.5em;
+}
+
+.circular--square {
+	width: 80%;
+	margin: 10px;
+	filter: drop-shadow(0 0 .8rem rgb(255, 255, 255));
+}
+
+/* quando os botoes estao desabilitados deixa-los com a cor de fundo cinza e remover a sombra e hover*/
+button:disabled {
+	background-color: #ccc;
+	box-shadow: none;
+}
+
+
+.btn {
+	background-color: #002B74;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+}
+
+.btn:hover {
+	background-color: #ffffff;
+	color: #002B74;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn-copy {
+	background-color: #002B74;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 130px;
+	letter-spacing: 1px;
+}
+
+.btn-copy:hover {
+	background-color: #ffffff;
+	color: #002B74;
+}
+
+.btn:active:after {
+	box-shadow: 0 0 0 0 #002B74;
+	position: absolute;
+	border-radius: 4em;
+	left: 0;
+	top: 0;
+	opacity: 1;
+	transition: 0s;
+}
+
+.btn:after {
+	content: "";
+	display: block;
+	position: absolute;
+	border-radius: 4em;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all 0.5s;
+	box-shadow: 0 0 5px 5px #002B74;
+}
+
+
+.btn-copy:active:after {
+	box-shadow: 0 0 0 0 #002B74;
+	position: absolute;
+	border-radius: 4em;
+	left: 0;
+	top: 0;
+	opacity: 1;
+	transition: 0s;
+}
+
+.btn-copy:after {
+	content: "";
+	display: block;
+	position: absolute;
+	border-radius: 4em;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all 0.5s;
+	box-shadow: 0 0 5px 5px #002B74;
+}
+
+.button:active {
+	top: 1px;
+}
+
+
+.btn-copy:focus {
+	outline: none;
+}
+
+.floating-text {
+	background-color: #002B74;
+	border-radius: 10px 10px 0 0;
+	color: #fff;
+	font-family: 'Muli';
+	padding: 7px 15px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	z-index: 998;
+}
+
+.floating-text a {
+	color: #FF720A;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+
+	.social-panel-container.visible {
+		transform: translateX(0px);
+	}
+
+	.floating-btn {
+		right: 10px;
+	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+	/* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+	/* Firefox */
+}
+
+#snackbar {
+	visibility: hidden; /* Hidden by default. Visible on click */
+	min-width: 100px; /* Set a default minimum width */
+	margin-left: -125px; /* Divide value of min-width by 2 */
+	background-color: #0a58ff; /* Black background color */
+	color: #fff; /* White text color */
+	text-align: center; /* Centered text */
+	border-radius: 2px; /* Rounded borders */
+	padding: 16px; /* Padding */
+	position: fixed; /* Sit on top of the screen */
+	z-index: 1; /* Add a z-index if needed */
+	left: 50%; /* Center the snackbar */
+	bottom: 30px; /* 30px from the bottom */
+  }
+  #toasty {
+	visibility: hidden; /* Hidden by default. Visible on click */
+	min-width: 100px; /* Set a default minimum width */
+	margin-left: -125px; /* Divide value of min-width by 2 */
+	background-color: #f03535; /* Black background color */
+	color: #fff; /* White text color */
+	text-align: center; /* Centered text */
+	border-radius: 2px; /* Rounded borders */
+	padding: 16px; /* Padding */
+	position: fixed; /* Sit on top of the screen */
+	z-index: 1; /* Add a z-index if needed */
+	left: 50%; /* Center the snackbar */
+	bottom: 30px; /* 30px from the bottom */
+  }
+
+  #toasty.show {
+	visibility: visible; /* Show the snackbar */
+	/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+	However, delay the fade out process for 2.5 seconds */
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+	visibility: visible; /* Show the snackbar */
+	/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+	However, delay the fade out process for 2.5 seconds */
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+  }
+
+  
